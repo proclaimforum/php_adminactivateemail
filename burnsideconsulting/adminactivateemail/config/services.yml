@@ -1,0 +1,17 @@
+services:
+    # This redefines the CORE service id 'notification.type.admin_activate_user'.
+    # Extensions are loaded after core, so a service defined here with the
+    # same id replaces phpBB's own definition without touching any core file.
+    # Keep 'parent', 'shared' and 'tags' identical to core's definition so the
+    # notification manager still treats it as a proper notification type -
+    # only 'class' changes, plus one extra constructor call we need.
+    notification.type.admin_activate_user:
+        class: burnsideconsulting\adminactivateemail\notification\type\admin_activate_user
+        shared: false
+        parent: notification.type.base
+        calls:
+            - [set_user_loader, ['@user_loader']]
+            - [set_config, ['@config']]
+            - [set_profile_manager, ['@profilefields.manager']]
+        tags:
+            - { name: notification.type }

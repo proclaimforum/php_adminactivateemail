@@ -1,0 +1,26 @@
+{
+	"name": "burnsideconsulting/adminactivateemail",
+	"type": "phpbb-extension",
+	"description": "Adds the registrant's email address and account/version field to the admin activation notification email.",
+	"homepage": "https://proclaim.guru",
+	"version": "1.0.0",
+	"time": "2026-09-27",
+	"licence": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Stephen Wilson",
+			"email": "steve@burnside.it",
+			"homepage": "https://proclaim.guru",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=7.1"
+	},
+	"extra": {
+		"display-name": "Admin Activate Email Extras",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2,<3.4"
+		}
+	}
+}
